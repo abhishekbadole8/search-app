@@ -1,0 +1,42 @@
+.filterContainer {
+    width: 18%;
+    height: 100%;
+}
+
+.brandFilter {
+    border-bottom: 1px solid grey;
+    padding-bottom: 5%;
+    margin-bottom: 7%;
+    
+}
+
+.filterTop {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5%;
+    cursor: pointer;
+}
+
+.filterHeading {
+    color: #2F3037;
+    font-weight: 500;
+}
+
+.brandList {
+    list-style: none;
+}
+
+.brandList li {
+    margin-bottom: 5%;
+}
+
+.brandListSingle label {
+    font-size: .9rem;
+    font-weight: 300;
+    display: flex;
+    gap: 5%;
+}
+
+.brandListSingle input {
+    width: 1.5vw;
+}
