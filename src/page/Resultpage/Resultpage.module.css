@@ -1,0 +1,31 @@
+.resultPage {
+    padding: 2%;
+}
+
+.searchHead {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3%;
+}
+
+.searchHead input {
+    width: 35vw;
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 1.25vh 1.25vw;
+    border-radius: 14px;
+    border: 1px solid grey;
+    color: rgb(145, 144, 144);
+}
+
+.showResultContainer h2 {
+    font-weight: 500;
+    font-size: 1.6rem;
+    margin-bottom: 2%;
+}
+
+.showResultInnerCont {
+    width: 100%;
+    display: flex;
+    gap: 2%;
+}

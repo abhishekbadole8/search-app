@@ -1,0 +1,80 @@
+.DisplayProductContainer {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.25rem;
+}
+
+.productBase {
+    max-width: 13.5rem;
+    height: 21.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 4px;
+    overflow: hidden;
+
+}
+
+.productBase:hover {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.productBaseImg {
+    width: 100%;
+    height: 60%;
+    justify-content: center;
+    display: flex;
+    position: relative;
+}
+
+.productBaseImg img {
+    width: 100%;
+    height: 16.5rem;
+    position: relative;
+}
+
+.wishlist {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.wishlist:hover {
+    color: red;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.productBaseDetail {
+    margin-bottom: .25rem;
+    margin-left: .35rem;
+}
+
+.productBaseDetail p {
+    margin-top: 3%;
+    font-size: .9rem;
+}
+
+.productName {
+    font-family: 'Inter';
+    font-weight: 500;
+}
+
+.mrpCut del {
+    color: rgba(0, 0, 0, 0.40);
+}
+
+.Blue {
+    color: #6D84FF;
+}
+
+.raiting {
+    display: flex;
+    gap: .1rem;
+}
+
+.raiting span {
+    font-size: .75rem;
+    color: rgba(0, 0, 0, 0.80);
+}
