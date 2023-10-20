@@ -2,9 +2,9 @@ import { useRef, useState } from "react";
 import Style from "./Search.module.css"
 import searchIcon from "../../assets/search.svg"
 import zeviLogo from "../../assets/zevi_logo.svg"
-import SuggestionBox from "../../component/Suggestionbox/Suggestionbox";
+import SuggestionBox from "../../components/Suggestionbox/Suggestionbox";
 
-function Homepage() {
+function Search() {
 
     const [inputValue, setInputValue] = useState('') // Input Value Store Here
     const [isSuggestion, setIsSuggestion] = useState(false) // Suggestion Box Check
@@ -32,4 +32,4 @@ function Homepage() {
         </div>)
 }
 
-export default Homepage;
+export default Search;

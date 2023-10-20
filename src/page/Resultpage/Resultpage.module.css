@@ -27,5 +27,6 @@
 .showResultInnerCont {
     width: 100%;
     display: flex;
-    gap: 2%;
+    justify-content: space-between;
+    gap: 1rem;
 }

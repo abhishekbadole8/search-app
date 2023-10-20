@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from "react";
-import Products from "../../component/Products/Products";
-import Filter from "../../component/Filter/Filter";
+import Products from "../../components/Products/Products";
+import Filter from "../../components/Filter/Filter";
 import Style from "./Resultpage.module.css"
 import { UserContext } from "../../App";
 
