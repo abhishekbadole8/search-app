@@ -29,7 +29,7 @@ function generateStarRating(rating) {
     return stars;
 }
 
-function DisplayProduct({ filteredProducts }) {
+function Products({ filteredProducts }) {
 
     const { products } = useContext(UserContext)
 
@@ -41,7 +41,16 @@ function DisplayProduct({ filteredProducts }) {
             [productId]: !prevWishlist[productId],
         }));
     };
-    
+
+    // Check if there are no products
+    if (filteredProducts.length === 0) {
+        return (
+            <h3 className={Style.noProductsMessage}>
+                No products available.
+            </h3>
+        );
+    }
+
     return (
         <div className={Style.DisplayProductContainer}>
 
@@ -65,7 +74,7 @@ function DisplayProduct({ filteredProducts }) {
                             <div className={Style.wishlist} onClick={() => toggleWishlist(id)}>
                                 {isWishlist ?
                                     <AiTwotoneHeart size={21} color="ff0000" />
-                                    : <AiOutlineHeart size={21} color="#fff"/>}
+                                    : <AiOutlineHeart size={21} color="#fff" />}
                             </div>
 
                         </div>
@@ -90,4 +99,4 @@ function DisplayProduct({ filteredProducts }) {
     )
 }
 
-export default DisplayProduct;
+export default Products;

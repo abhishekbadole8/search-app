@@ -78,3 +78,8 @@
     font-size: .75rem;
     color: rgba(0, 0, 0, 0.80);
 }
+
+.noProductsMessage{
+    width: 75%;
+    text-align: start;
+}

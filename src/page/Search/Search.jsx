@@ -3,23 +3,37 @@ import Style from "./Search.module.css"
 import searchIcon from "../../assets/search.svg"
 import zeviLogo from "../../assets/zevi_logo.svg"
 import SuggestionBox from "../../components/Suggestionbox/Suggestionbox";
+import { useNavigate, useSearchParams } from "react-router-dom";
+
 
 function Search() {
 
-    const [inputValue, setInputValue] = useState('') // Input Value Store Here
+    const [searchParams] = useSearchParams();
+    const [searchQuery, setSearchQuery] = useState(searchParams.get("query") || "");
     const [isSuggestion, setIsSuggestion] = useState(false) // Suggestion Box Check
     const closeSuggestionBox = useRef()
+    const navigate = useNavigate();
 
     const CloseSuggestionBox = (e) => {
         if (e.target == closeSuggestionBox.current) setIsSuggestion(false)
     }
 
+    function redirectToSearchResultsPage() {
+        navigate(`/results/${searchQuery}`);
+    }
     return (
         <div className={Style.Search}>
 
             <div className={Style.searchContainer} ref={closeSuggestionBox} onClick={CloseSuggestionBox}>
 
-                <input type="text" placeholder="Search" onChange={(e) => setInputValue(e.target.value)} onClick={() => setIsSuggestion(true)} />
+                <input type="text" placeholder="Search" value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onKeyDown={(e) => {
+                        if (e.key == "Enter") {
+                            redirectToSearchResultsPage();
+                        }
+                    }}
+                    onClick={() => setIsSuggestion(true)}  />
 
                 <img src={searchIcon} alt="search-icon" className={Style.SearchIcon} />
 

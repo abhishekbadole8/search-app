@@ -3,8 +3,10 @@ import Products from "../../components/Products/Products";
 import Filter from "../../components/Filter/Filter";
 import Style from "./Resultpage.module.css"
 import { UserContext } from "../../App";
+import {  useParams } from "react-router-dom";
 
 function ResultPage() {
+    const { query } = useParams(); 
 
     const { products } = useContext(UserContext)
 
@@ -53,9 +55,17 @@ function ResultPage() {
         );
     });
 
+     const filteredProductsByQuery = filteredProducts.filter((product) => {
+        const queryLowerCase = query.toLowerCase();
+        return (
+            product.title.toLowerCase().includes(queryLowerCase) ||
+            product.category.toLowerCase().includes(queryLowerCase)
+        );
+    });
+
     return (
         <div className={Style.resultPage}>
-            
+
             <div className={Style.searchHead}>
 
                 <input type="text" placeholder="Search" />
@@ -64,13 +74,13 @@ function ResultPage() {
 
             <div className={Style.showResultContainer}>
 
-                <h2> Search Results</h2>
+                <h2> Search Results for: {query}</h2>
 
                 <div className={Style.showResultInnerCont}>
 
                     <Filter handleFilterChange={handleFilterChange} />
 
-                    <Products filteredProducts={filteredProducts} />
+                    <Products filteredProducts={filteredProductsByQuery} />
 
                 </div>
 

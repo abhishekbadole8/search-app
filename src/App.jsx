@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router-dom";
 import Style from "./App.module.css";
 import Search from "./page/Search/Search";
 import ResultPage from "./page/Resultpage/Resultpage";
@@ -31,9 +31,10 @@ function App() {
       <UserContext.Provider value={{ products }}>
         <Router>
           <Routes>
-            <Route path="/" index element={<Search />} />
+            <Route exact path="/" element={<Search />} />
+            <Route path="/*" element={<Navigate to="/" />} />
             <Route path="/search" element={<Search />} />
-            <Route path="/result" element={<ResultPage />} />
+            <Route path="/results/:query" element={<ResultPage />} />
           </Routes>
         </Router>
       </UserContext.Provider>
