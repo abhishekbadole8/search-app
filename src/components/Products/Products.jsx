@@ -56,7 +56,7 @@ function Products({ filteredProducts }) {
 
             {filteredProducts.map((product) => {
 
-                const { id, title, price, category, thumbnail, rating, discountPercentage } = product
+                const { id, title, price, thumbnail, rating, discountPercentage } = product
 
                 const discountedPrice = price / 100 * discountPercentage
 
@@ -64,8 +64,20 @@ function Products({ filteredProducts }) {
 
                 const isWishlist = wishlist[id] || false;
 
+                const [isHovered, setIsHovered] = useState(false);
+
+                const handleMouseEnter = () => {
+                    setIsHovered(true);
+                };
+
+                const handleMouseLeave = () => {
+                    setIsHovered(false);
+                };
+
                 return (
-                    <div className={Style.productBase} key={id}>
+                    <div className={Style.productBase} key={id}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}>
 
                         <div className={Style.productBaseImg}>
 
@@ -76,7 +88,11 @@ function Products({ filteredProducts }) {
                                     <AiTwotoneHeart size={21} color="ff0000" />
                                     : <AiOutlineHeart size={21} color="#fff" />}
                             </div>
-
+                            {isHovered && (
+                                <div className={Style.viewProduct}>
+                                    <button onClick={() => viewProduct(id)}>View Product</button>
+                                </div>
+                            )}
                         </div>
 
                         <div className={Style.productBaseDetail}>

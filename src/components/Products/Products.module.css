@@ -6,7 +6,7 @@
 }
 
 .productBase {
-    max-width: 13.5rem;
+    max-width: 13rem;
     height: 21.5rem;
     display: flex;
     flex-direction: column;
@@ -14,10 +14,6 @@
     border-radius: 4px;
     overflow: hidden;
 
-}
-
-.productBase:hover {
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .productBaseImg {
@@ -82,4 +78,20 @@
 .noProductsMessage{
     width: 75%;
     text-align: start;
+}
+.viewProduct{
+    width: 100%;
+    position: absolute;
+    bottom: -28%;
+    background: rgba(109, 132, 255, 0.71);
+}
+.viewProduct button{
+    text-shadow: 0px 4px 32px rgba(0, 0, 0, 0.25);
+    font-family: 'Inter';
+    font-size: .9rem;
+    font-weight: 500;
+    color: #fff;
+    width: 100%;
+    background-color: transparent;
+    padding: .75rem 0;
 }
